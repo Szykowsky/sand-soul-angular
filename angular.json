@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/sand-soul",
       "sourceRoot": "projects/sand-soul/src",
-      "prefix": "lib",
+      "prefix": "sand",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

@@ -13,7 +13,7 @@ export default {
 const Template: Story<PrimaryButtonComponent> = (args: PrimaryButtonComponent) => ({
   props: args,
   template: `
-    <lib-primary-button>Button</lib-primary-button>
+    <sand-primary-button [disabled]="disabled">Button</sand-primary-button>
   `
 });
 

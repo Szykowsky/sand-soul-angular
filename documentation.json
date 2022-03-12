@@ -9,14 +9,15 @@
     "components": [
         {
             "name": "PrimaryButtonComponent",
-            "id": "component-PrimaryButtonComponent-8b8bf1ae4a92b23cc43631d8b5c5122d964f301ac98afe568b7f4db765c940ef192630446e983c80a2c8cd5585b9498a0c38b550da4bf77b8032301344fdf97c",
+            "id": "component-PrimaryButtonComponent-6d81169282b4f58d1aaad3960dd5356913d31826a47ca030438be63d4bb3093d487c5c22f145e452cac061b8e075e32289fef9762b338753b4a7d1ee56eca0bc",
             "file": "projects/sand-soul/src/lib/buttons/primary-button/primary-button.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "lib-primary-button",
+            "selector": "sand-primary-button",
             "styleUrls": [
                 "./primary-button.component.scss"
             ],
@@ -25,7 +26,17 @@
                 "./primary-button.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [
@@ -35,7 +46,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 16,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -47,7 +58,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-primary-button',\n  templateUrl: './primary-button.component.html',\n  styleUrls: ['./primary-button.component.scss']\n})\nexport class PrimaryButtonComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'sand-primary-button',\n  templateUrl: './primary-button.component.html',\n  styleUrls: ['./primary-button.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class PrimaryButtonComponent implements OnInit {\n\n  @Input() \n  disabled: boolean = false;\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -62,12 +73,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 8
+                "line": 12
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<button class=\"inner-height-neon\">\n    <span class=\"bg-height\"></span>\n    <span class=\"btn-text\">\n      <ng-content></ng-content>\n    </span>\n  </button>"
+            "templateData": "<button class=\"inner-height-neon\" [disabled]=\"disabled\">\n    <span class=\"bg-height\"></span>\n    <span class=\"btn-text\">\n      <ng-content></ng-content>\n    </span>\n  </button>"
         }
     ],
     "modules": [
@@ -129,6 +140,16 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/PrimaryButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -155,7 +176,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<PrimaryButtonComponent>",
-                "defaultValue": "(args: PrimaryButtonComponent) => ({\n  props: args,\n  template: `\n    <lib-primary-button>Button</lib-primary-button>\n  `\n})"
+                "defaultValue": "(args: PrimaryButtonComponent) => ({\n  props: args,\n  template: `\n    <sand-primary-button [disabled]=\"disabled\">Button</sand-primary-button>\n  `\n})"
             }
         ],
         "functions": [],
@@ -185,6 +206,16 @@
             ],
             "stories/PrimaryButton.stories.ts": [
                 {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/PrimaryButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -202,7 +233,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<PrimaryButtonComponent>",
-                    "defaultValue": "(args: PrimaryButtonComponent) => ({\n  props: args,\n  template: `\n    <lib-primary-button>Button</lib-primary-button>\n  `\n})"
+                    "defaultValue": "(args: PrimaryButtonComponent) => ({\n  props: args,\n  template: `\n    <sand-primary-button [disabled]=\"disabled\">Button</sand-primary-button>\n  `\n})"
                 }
             ]
         },
@@ -221,7 +252,7 @@
                 "linktype": "component",
                 "name": "PrimaryButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -240,6 +271,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/PrimaryButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
