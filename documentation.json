@@ -1,0 +1,269 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "PrimaryButtonComponent",
+            "id": "component-PrimaryButtonComponent-8b8bf1ae4a92b23cc43631d8b5c5122d964f301ac98afe568b7f4db765c940ef192630446e983c80a2c8cd5585b9498a0c38b550da4bf77b8032301344fdf97c",
+            "file": "projects/sand-soul/src/lib/buttons/primary-button/primary-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-primary-button",
+            "styleUrls": [
+                "./primary-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./primary-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-primary-button',\n  templateUrl: './primary-button.component.html',\n  styleUrls: ['./primary-button.component.scss']\n})\nexport class PrimaryButtonComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../shared//variables.scss\";\r\n\r\nbutton {\r\n    font-size: 20px;\r\n    min-width: 230px;\r\n    min-height: 80px;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    margin: 24px;\r\n  }\r\n  .inner-height-neon {\r\n    background-color: transparent;\r\n    border: 2px solid $primary-color;\r\n    color: $primary-color;\r\n    -webkit-transition: all 0.3s ease-in-out;\r\n    transition: all 0.3s ease-in-out;\r\n    position: relative;\r\n    &:hover:enabled {\r\n      -webkit-box-shadow: 0px 0px 30px 20px $primary-color;\r\n      box-shadow: 0px 0px 30px 20px $primary-color;\r\n      border-color: #6bfff1;\r\n      .bg-height {\r\n        height: 100%;\r\n        top: 0%;\r\n        z-index: -1;\r\n      }\r\n      .btn-text {\r\n        color: #1aa99b;\r\n      }\r\n    }\r\n    &:disabled {\r\n      z-index: 3;\r\n      border-color: $disabled-color;\r\n      color: $disabled-color;\r\n      cursor: not-allowed;\r\n    }\r\n    .bg-height {\r\n      background-color: $primary-color;\r\n      position: absolute;\r\n      left: 0;\r\n      right: 0;\r\n      top: 50%;\r\n      bottom: 0;\r\n      height: 0%;\r\n      -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n      align-items: center;\r\n      -webkit-transition: height 0.3s, top 0.3s;\r\n      transition: height 0.3s, top 0.3s;\r\n    }\r\n    .btn-text {\r\n      z-index: 1;\r\n    }\r\n  }",
+                    "styleUrl": "./primary-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button class=\"inner-height-neon\">\n    <span class=\"bg-height\"></span>\n    <span class=\"btn-text\">\n      <ng-content></ng-content>\n    </span>\n  </button>"
+        }
+    ],
+    "modules": [
+        {
+            "name": "SandSoulModule",
+            "id": "module-SandSoulModule-e25586731849a138467965f0062b0a43be8dafbaad118f730023975acbfdad69a60db20aa25b1396352b360c4769d81e48b2816d8326af40860abf9b7cb4dbdb",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/sand-soul/src/lib/sand-soul.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { PrimaryButtonComponent } from './buttons/primary-button/primary-button.component';\n\n\n\n@NgModule({\n  declarations: [\n    PrimaryButtonComponent\n  ],\n  imports: [\n  ],\n  exports: [\n    PrimaryButtonComponent\n  ]\n})\nexport class SandSoulModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "PrimaryButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "PrimaryButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sand-soul/src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/PrimaryButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sand-soul/src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/PrimaryButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<PrimaryButtonComponent>",
+                "defaultValue": "(args: PrimaryButtonComponent) => ({\n  props: args,\n  template: `\n    <lib-primary-button>Button</lib-primary-button>\n  `\n})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/sand-soul/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sand-soul/src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sand-soul/src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type"
+                }
+            ],
+            "stories/PrimaryButton.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/PrimaryButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/PrimaryButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<PrimaryButtonComponent>",
+                    "defaultValue": "(args: PrimaryButtonComponent) => ({\n  props: args,\n  template: `\n    <lib-primary-button>Button</lib-primary-button>\n  `\n})"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/sand-soul/src/lib/buttons/primary-button/primary-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PrimaryButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sand-soul/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sand-soul/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/PrimaryButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/PrimaryButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

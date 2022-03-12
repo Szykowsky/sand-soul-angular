@@ -16,6 +16,11 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "sand-soul": [
+        "./projects/sands-soul/src/public-api"
+      ]
+    },
     "target": "es2017",
     "module": "es2020",
     "lib": [
