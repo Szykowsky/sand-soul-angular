@@ -8,6 +8,78 @@
     "directives": [],
     "components": [
         {
+            "name": "NeonParagraphComponent",
+            "id": "component-NeonParagraphComponent-be33937679403903bbbe6d10cd4c3f8e1df85c60a1a79d8a2a4ac43dd2b4299167c969461e243e3214bf39eab33be168b1ef14b542cb109e09751f817a0d53f1",
+            "file": "projects/sand-soul/src/lib/typography/neon-paragraph/neon-paragraph.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sand-neon-paragraph",
+            "styleUrls": [
+                "./neon-paragraph.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./neon-paragraph.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "isFlicker",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'sand-neon-paragraph',\n  templateUrl: './neon-paragraph.component.html',\n  styleUrls: ['./neon-paragraph.component.scss'],\n})\nexport class NeonParagraphComponent implements OnInit {\n  @Input()\n  isFlicker: boolean = false;\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../shared/variables.scss\";\r\n@import \"../../shared/animations.scss\";\r\n\r\n.text {\r\n  font-size: 18px;\r\n}\r\n\r\n.neon-text {\r\n  color: $primary-color;\r\n  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px $text-shadow-color,\r\n    0 0 82px $text-shadow-color, 0 0 92px $text-shadow-color, 0 0 102px $text-shadow-color, 0 0 151px $text-shadow-color;\r\n}\r\n\r\n.neon-text-flicker {\r\n  color: $primary-color;\r\n  animation: flicker 1.5s infinite alternate;\r\n}",
+                    "styleUrl": "./neon-paragraph.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p class=\"text\" [ngClass]=\"isFlicker ? 'neon-text-flicker': 'neon-text'\">\n  <ng-content></ng-content>\n</p>\n"
+        },
+        {
             "name": "PrimaryButtonComponent",
             "id": "component-PrimaryButtonComponent-6d81169282b4f58d1aaad3960dd5356913d31826a47ca030438be63d4bb3093d487c5c22f145e452cac061b8e075e32289fef9762b338753b4a7d1ee56eca0bc",
             "file": "projects/sand-soul/src/lib/buttons/primary-button/primary-button.component.ts",
@@ -84,13 +156,13 @@
     "modules": [
         {
             "name": "SandSoulModule",
-            "id": "module-SandSoulModule-e25586731849a138467965f0062b0a43be8dafbaad118f730023975acbfdad69a60db20aa25b1396352b360c4769d81e48b2816d8326af40860abf9b7cb4dbdb",
+            "id": "module-SandSoulModule-f91ed3342def2d0278e9b40227245d266c484e1524b5a5afd67f5cedb70bf7d9685d81451fe3a760c486735cce6dcd31fab64e6fa6fd85e4f891fdd1f7220d2d",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/sand-soul/src/lib/sand-soul.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { PrimaryButtonComponent } from './buttons/primary-button/primary-button.component';\n\n\n\n@NgModule({\n  declarations: [\n    PrimaryButtonComponent\n  ],\n  imports: [\n  ],\n  exports: [\n    PrimaryButtonComponent\n  ]\n})\nexport class SandSoulModule { }\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { PrimaryButtonComponent } from './buttons/primary-button/primary-button.component';\nimport { NeonParagraphComponent } from './typography/neon-paragraph/neon-paragraph.component';\n\n\n\n@NgModule({\n  declarations: [\n    PrimaryButtonComponent,\n    NeonParagraphComponent\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports: [\n    PrimaryButtonComponent,\n    NeonParagraphComponent\n  ]\n})\nexport class SandSoulModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -99,6 +171,9 @@
                 {
                     "type": "declarations",
                     "elements": [
+                        {
+                            "name": "NeonParagraphComponent"
+                        },
                         {
                             "name": "PrimaryButtonComponent"
                         }
@@ -111,6 +186,9 @@
                 {
                     "type": "exports",
                     "elements": [
+                        {
+                            "name": "NeonParagraphComponent"
+                        },
                         {
                             "name": "PrimaryButtonComponent"
                         }
@@ -150,6 +228,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Flicker",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/NeonParagraph.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Normal",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/NeonParagraph.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -167,6 +265,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/NeonParagraph.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<NeonParagraphComponent>",
+                "defaultValue": "(args: NeonParagraphComponent) => ({\r\n  props: args,\r\n  template: `\r\n    <sand-neon-paragraph [isFlicker]=\"isFlicker\">Button</sand-neon-paragraph>\r\n  `\r\n})"
             },
             {
                 "name": "Template",
@@ -235,6 +343,38 @@
                     "type": "Story<PrimaryButtonComponent>",
                     "defaultValue": "(args: PrimaryButtonComponent) => ({\n  props: args,\n  template: `\n    <sand-primary-button [disabled]=\"disabled\">Button</sand-primary-button>\n  `\n})"
                 }
+            ],
+            "stories/NeonParagraph.stories.ts": [
+                {
+                    "name": "Flicker",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/NeonParagraph.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Normal",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/NeonParagraph.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/NeonParagraph.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<NeonParagraphComponent>",
+                    "defaultValue": "(args: NeonParagraphComponent) => ({\r\n  props: args,\r\n  template: `\r\n    <sand-neon-paragraph [isFlicker]=\"isFlicker\">Button</sand-neon-paragraph>\r\n  `\r\n})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -256,6 +396,15 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/sand-soul/src/lib/typography/neon-paragraph/neon-paragraph.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NeonParagraphComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/sand-soul/src/test.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -271,6 +420,36 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/NeonParagraph.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Flicker",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/NeonParagraph.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Normal",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/NeonParagraph.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

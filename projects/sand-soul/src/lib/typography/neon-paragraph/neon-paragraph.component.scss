@@ -1,0 +1,18 @@
+@import "../../shared/variables.scss";
+@import "../../shared/animations.scss";
+
+.text {
+  font-size: 18px;
+  font-family: consolas;
+}
+
+.neon-text {
+  color: $primary-color;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px $text-shadow-color,
+    0 0 82px $text-shadow-color, 0 0 92px $text-shadow-color, 0 0 102px $text-shadow-color, 0 0 151px $text-shadow-color;
+}
+
+.neon-text-flicker {
+  color: $primary-color;
+  animation: flicker 1.5s infinite alternate;
+}
