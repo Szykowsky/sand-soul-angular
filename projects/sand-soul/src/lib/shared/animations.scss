@@ -1,0 +1,40 @@
+@mixin transition($x...) {
+    -webkit-transition: $x;
+    -moz-transition: $x;
+    -ms-transition: $x;
+    -o-transition: $x;
+    transition: $x;
+  }
+  
+  @mixin translate($x, $y) {
+    -webkit-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    -o-transform: translate($x, $y);
+    transform: translate($x, $y);
+  }
+  
+  @mixin transform($transforms) {
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    transform: $transforms;
+  }
+
+@keyframes flicker {
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+      text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px $text-shadow-color,
+        0 0 80px $text-shadow-color, 0 0 90px $text-shadow-color, 0 0 100px $text-shadow-color, 0 0 150px $text-shadow-color;
+    }
+    20%,
+    24%,
+    55% {
+      text-shadow: none;
+    }
+  }
