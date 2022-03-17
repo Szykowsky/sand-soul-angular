@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @mixin transition($x...) {
     -webkit-transition: $x;
     -moz-transition: $x;

@@ -8,9 +8,193 @@
     "directives": [],
     "components": [
         {
+            "name": "CustomInputComponent",
+            "id": "component-CustomInputComponent-5807710543b62786f1f523ee340c69b1e936beaf4938f494985db2379d33aa4a77dc14bff9ddc469a7899165911456c0733110eecee023db760785cb158945d0",
+            "file": "projects/sand-soul/src/lib/controls/custom-input/custom-input.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "{\n    provide: NG_VALUE_ACCESSOR, multi: true, useExisting: CustomInputComponent\n}",
+                    "type": "component"
+                }
+            ],
+            "selector": "sand-custom-input",
+            "styleUrls": [
+                "./custom-input.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./custom-input.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "controlValue",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "onChange",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "registerOnChange",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "registerOnTouched",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "writeValue",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Component({\n  selector: 'sand-custom-input',\n  templateUrl: './custom-input.component.html',\n  styleUrls: ['./custom-input.component.scss'],\n  providers: [\n    {\n      provide: NG_VALUE_ACCESSOR,\n      multi:true,\n      useExisting: CustomInputComponent\n    }\n  ],\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class CustomInputComponent implements ControlValueAccessor {\n  @Input()\n  disabled: boolean = false;\n\n  controlValue: string = '';\n  type: string = 'text';\n\n  constructor() { }\n\n  writeValue(value: string): void {\n    this.controlValue = value;\n  }\n\n  onChange = (value: string) => {}\n\n  registerOnChange(fn: any): void {\n    this.onChange = fn;\n  }\n  \n  registerOnTouched(fn: any): void {\n    this.onChange = fn;\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../shared/animations.scss\";\r\n@import \"../../shared/variables.scss\";\r\n\r\n.transition {\r\n    @include transition(all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5));\r\n  }\r\n  .question {\r\n    position: relative;\r\n    padding: 24px 0;\r\n  }\r\n  label {\r\n    @extend .transition;\r\n    transform-origin: left center;\r\n    color: $primary-color;\r\n    font-weight: 100;\r\n    letter-spacing: 0.01em;\r\n    font-size: 18px;\r\n    box-sizing: border-box;\r\n    padding: 8px 15px;\r\n    display: block;\r\n    position: absolute;\r\n    margin-top: -40px;\r\n    z-index: 2;\r\n    pointer-events: none;\r\n  }\r\n  input[type=\"text\"] {\r\n    @extend .transition;\r\n    appearance: none;\r\n    background-color: transparent;\r\n    border: 2px solid $primary-color;\r\n    line-height: 0;\r\n    font-size: 18px;\r\n    width: 100%;\r\n    display: block;\r\n    box-sizing: border-box;\r\n    padding: 10px 15px;\r\n    color: $primary-color;\r\n    font-weight: 100;\r\n    letter-spacing: 0.01em;\r\n    position: relative;\r\n    z-index: 1;\r\n    &:focus {\r\n      outline: none;\r\n      background: $primary-color;\r\n      color: white;\r\n      margin-top: 30px;\r\n      box-shadow: 0 0 4px 2px #fff, 0 0 7px #fff, 0 0 12px #fff,\r\n        0 0 18px $text-shadow-color, 0 0 32px $text-shadow-color,\r\n        0 0 44px $text-shadow-color;\r\n    }\r\n    &:valid {\r\n      margin-top: 30px;\r\n    }\r\n    &:focus ~ label {\r\n      @include translate(0, -45px);\r\n    }\r\n    &:valid ~ label {\r\n      text-transform: uppercase;\r\n      font-style: italic;\r\n      @include transform(translate(5px, -45px) scale(0.6));\r\n    }\r\n  }",
+                    "styleUrl": "./custom-input.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 22
+            },
+            "implements": [
+                "ControlValueAccessor"
+            ],
+            "templateData": "<div class=\"input-wrapper\">\n  <input [type]=\"type\"/>\n  <label><ng-content></ng-content></label>\n</div>\n"
+        },
+        {
             "name": "NeonParagraphComponent",
-            "id": "component-NeonParagraphComponent-be33937679403903bbbe6d10cd4c3f8e1df85c60a1a79d8a2a4ac43dd2b4299167c969461e243e3214bf39eab33be168b1ef14b542cb109e09751f817a0d53f1",
+            "id": "component-NeonParagraphComponent-6abe19e9bebdd6c16424e62af2c30a4482e1dd62be3b35665b3b696428bec9585f5dc7db5d6535ae03c2d4061ead12dd81ff0d86b409e44abac37ae4ff1b26e6",
             "file": "projects/sand-soul/src/lib/typography/neon-paragraph/neon-paragraph.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -31,7 +215,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 11,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -45,7 +229,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 13,
+                    "line": 14,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -57,11 +241,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'sand-neon-paragraph',\n  templateUrl: './neon-paragraph.component.html',\n  styleUrls: ['./neon-paragraph.component.scss'],\n})\nexport class NeonParagraphComponent implements OnInit {\n  @Input()\n  isFlicker: boolean = false;\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'sand-neon-paragraph',\n  templateUrl: './neon-paragraph.component.html',\n  styleUrls: ['./neon-paragraph.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class NeonParagraphComponent implements OnInit {\n  @Input()\n  isFlicker: boolean = false;\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../shared/variables.scss\";\r\n@import \"../../shared/animations.scss\";\r\n\r\n.text {\r\n  font-size: 18px;\r\n}\r\n\r\n.neon-text {\r\n  color: $primary-color;\r\n  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px $text-shadow-color,\r\n    0 0 82px $text-shadow-color, 0 0 92px $text-shadow-color, 0 0 102px $text-shadow-color, 0 0 151px $text-shadow-color;\r\n}\r\n\r\n.neon-text-flicker {\r\n  color: $primary-color;\r\n  animation: flicker 1.5s infinite alternate;\r\n}",
+                    "data": "@import \"../../shared/variables.scss\";\r\n@import \"../../shared/animations.scss\";\r\n\r\n.text {\r\n  font-size: 18px;\r\n  font-family: consolas;\r\n}\r\n\r\n.neon-text {\r\n  color: $primary-color;\r\n  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px $text-shadow-color,\r\n    0 0 82px $text-shadow-color, 0 0 92px $text-shadow-color, 0 0 102px $text-shadow-color, 0 0 151px $text-shadow-color;\r\n}\r\n\r\n.neon-text-flicker {\r\n  color: $primary-color;\r\n  animation: flicker 1.5s infinite alternate;\r\n}",
                     "styleUrl": "./neon-paragraph.component.scss"
                 }
             ],
@@ -72,7 +256,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 10
+                "line": 11
             },
             "implements": [
                 "OnInit"
@@ -134,7 +318,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../shared//variables.scss\";\r\n\r\nbutton {\r\n    font-size: 20px;\r\n    min-width: 230px;\r\n    min-height: 80px;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    margin: 24px;\r\n  }\r\n  .inner-height-neon {\r\n    background-color: transparent;\r\n    border: 2px solid $primary-color;\r\n    color: $primary-color;\r\n    -webkit-transition: all 0.3s ease-in-out;\r\n    transition: all 0.3s ease-in-out;\r\n    position: relative;\r\n    &:hover:enabled {\r\n      -webkit-box-shadow: 0px 0px 30px 20px $primary-color;\r\n      box-shadow: 0px 0px 30px 20px $primary-color;\r\n      border-color: #6bfff1;\r\n      .bg-height {\r\n        height: 100%;\r\n        top: 0%;\r\n        z-index: -1;\r\n      }\r\n      .btn-text {\r\n        color: #1aa99b;\r\n      }\r\n    }\r\n    &:disabled {\r\n      z-index: 3;\r\n      border-color: $disabled-color;\r\n      color: $disabled-color;\r\n      cursor: not-allowed;\r\n    }\r\n    .bg-height {\r\n      background-color: $primary-color;\r\n      position: absolute;\r\n      left: 0;\r\n      right: 0;\r\n      top: 50%;\r\n      bottom: 0;\r\n      height: 0%;\r\n      -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n      align-items: center;\r\n      -webkit-transition: height 0.3s, top 0.3s;\r\n      transition: height 0.3s, top 0.3s;\r\n    }\r\n    .btn-text {\r\n      z-index: 1;\r\n    }\r\n  }",
+                    "data": "@import \"../../shared//variables.scss\";\r\n\r\nbutton {\r\n    font-size: 20px;\r\n    min-width: 230px;\r\n    min-height: 80px;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    margin: 24px;\r\n    font-family: consolas;\r\n  }\r\n  .inner-height-neon {\r\n    background-color: transparent;\r\n    border: 2px solid $primary-color;\r\n    color: $primary-color;\r\n    -webkit-transition: all 0.3s ease-in-out;\r\n    transition: all 0.3s ease-in-out;\r\n    position: relative;\r\n    &:hover:enabled {\r\n      -webkit-box-shadow: 0px 0px 30px 20px $primary-color;\r\n      box-shadow: 0px 0px 30px 20px $primary-color;\r\n      border-color: #6bfff1;\r\n      .bg-height {\r\n        height: 100%;\r\n        top: 0%;\r\n        z-index: -1;\r\n      }\r\n      .btn-text {\r\n        color: #1aa99b;\r\n      }\r\n    }\r\n    &:disabled {\r\n      z-index: 3;\r\n      border-color: $disabled-color;\r\n      color: $disabled-color;\r\n      cursor: not-allowed;\r\n    }\r\n    .bg-height {\r\n      background-color: $primary-color;\r\n      position: absolute;\r\n      left: 0;\r\n      right: 0;\r\n      top: 50%;\r\n      bottom: 0;\r\n      height: 0%;\r\n      -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n      align-items: center;\r\n      -webkit-transition: height 0.3s, top 0.3s;\r\n      transition: height 0.3s, top 0.3s;\r\n    }\r\n    .btn-text {\r\n      z-index: 1;\r\n    }\r\n  }",
                     "styleUrl": "./primary-button.component.scss"
                 }
             ],
@@ -156,13 +340,13 @@
     "modules": [
         {
             "name": "SandSoulModule",
-            "id": "module-SandSoulModule-f91ed3342def2d0278e9b40227245d266c484e1524b5a5afd67f5cedb70bf7d9685d81451fe3a760c486735cce6dcd31fab64e6fa6fd85e4f891fdd1f7220d2d",
+            "id": "module-SandSoulModule-d6418c9b248a733064779eea60f110baf97ca37caafb668b727ec397ca5134b247312906e5c458d25fdc99536fd2c24e44b5356b59db685084be421c43efad8f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/sand-soul/src/lib/sand-soul.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { PrimaryButtonComponent } from './buttons/primary-button/primary-button.component';\nimport { NeonParagraphComponent } from './typography/neon-paragraph/neon-paragraph.component';\n\n\n\n@NgModule({\n  declarations: [\n    PrimaryButtonComponent,\n    NeonParagraphComponent\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports: [\n    PrimaryButtonComponent,\n    NeonParagraphComponent\n  ]\n})\nexport class SandSoulModule { }\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { PrimaryButtonComponent } from './buttons/primary-button/primary-button.component';\nimport { NeonParagraphComponent } from './typography/neon-paragraph/neon-paragraph.component';\nimport { CustomInputComponent } from './controls/custom-input/custom-input.component';\n\n\n\n@NgModule({\n  declarations: [\n    PrimaryButtonComponent,\n    NeonParagraphComponent,\n    CustomInputComponent\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports: [\n    PrimaryButtonComponent,\n    NeonParagraphComponent\n  ]\n})\nexport class SandSoulModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -171,6 +355,9 @@
                 {
                     "type": "declarations",
                     "elements": [
+                        {
+                            "name": "CustomInputComponent"
+                        },
                         {
                             "name": "NeonParagraphComponent"
                         },
@@ -221,6 +408,16 @@
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/Controls.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/PrimaryButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -232,6 +429,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/NeonParagraph.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Normal",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Controls.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -270,11 +477,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/Controls.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CustomInputComponent>",
+                "defaultValue": "(args: CustomInputComponent) => ({\r\n  props: args,\r\n  template: `\r\n    <sand-custom-input [disabled]=\"disabled\">Label</sand-custom-input>\r\n  `\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/NeonParagraph.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<NeonParagraphComponent>",
-                "defaultValue": "(args: NeonParagraphComponent) => ({\r\n  props: args,\r\n  template: `\r\n    <sand-neon-paragraph [isFlicker]=\"isFlicker\">Button</sand-neon-paragraph>\r\n  `\r\n})"
+                "defaultValue": "(args: NeonParagraphComponent) => ({\r\n  props: args,\r\n  template: `\r\n    <sand-neon-paragraph [isFlicker]=\"isFlicker\">sand-neon-paragraph</sand-neon-paragraph>\r\n  `\r\n})"
             },
             {
                 "name": "Template",
@@ -310,6 +527,38 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "literal type"
+                }
+            ],
+            "stories/Controls.stories.ts": [
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Controls.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Normal",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Controls.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Controls.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CustomInputComponent>",
+                    "defaultValue": "(args: CustomInputComponent) => ({\r\n  props: args,\r\n  template: `\r\n    <sand-custom-input [disabled]=\"disabled\">Label</sand-custom-input>\r\n  `\r\n})"
                 }
             ],
             "stories/PrimaryButton.stories.ts": [
@@ -373,7 +622,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<NeonParagraphComponent>",
-                    "defaultValue": "(args: NeonParagraphComponent) => ({\r\n  props: args,\r\n  template: `\r\n    <sand-neon-paragraph [isFlicker]=\"isFlicker\">Button</sand-neon-paragraph>\r\n  `\r\n})"
+                    "defaultValue": "(args: NeonParagraphComponent) => ({\r\n  props: args,\r\n  template: `\r\n    <sand-neon-paragraph [isFlicker]=\"isFlicker\">sand-neon-paragraph</sand-neon-paragraph>\r\n  `\r\n})"
                 }
             ]
         },
@@ -393,6 +642,15 @@
                 "name": "PrimaryButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sand-soul/src/lib/controls/custom-input/custom-input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CustomInputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -420,6 +678,36 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Controls.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Controls.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Normal",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Controls.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
