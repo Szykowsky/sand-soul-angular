@@ -4,7 +4,7 @@
 .transition {
     @include transition(all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5));
   }
-  .question {
+  .input-wrapper {
     position: relative;
     padding: 24px 0;
   }

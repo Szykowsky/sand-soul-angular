@@ -17,7 +17,8 @@ import { CustomInputComponent } from './controls/custom-input/custom-input.compo
   ],
   exports: [
     PrimaryButtonComponent,
-    NeonParagraphComponent
+    NeonParagraphComponent,
+    CustomInputComponent
   ]
 })
 export class SandSoulModule { }
