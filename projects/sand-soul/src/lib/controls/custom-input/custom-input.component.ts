@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  forwardRef,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -8,11 +14,11 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      multi:true,
-      useExisting: CustomInputComponent
-    }
+      multi: true,
+      useExisting: forwardRef(() => CustomInputComponent),
+    },
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CustomInputComponent implements ControlValueAccessor {
   @Input()
@@ -22,20 +28,25 @@ export class CustomInputComponent implements ControlValueAccessor {
 
   controlValue: string = '';
 
-  constructor() { }
+  constructor() {}
 
   writeValue(value: string): void {
     this.controlValue = value;
   }
 
-  onChange = (value: string) => {}
+  onChange = (value: string) => {};
 
   registerOnChange(fn: any): void {
     this.onChange = fn;
   }
-  
+
+  onTouched = () => {};
+
   registerOnTouched(fn: any): void {
-    this.onChange = fn;
+    this.onTouched = fn;
   }
 
+  setDisabledState?(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
 }
