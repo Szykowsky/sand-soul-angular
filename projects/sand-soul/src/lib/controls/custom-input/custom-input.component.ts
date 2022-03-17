@@ -17,9 +17,10 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class CustomInputComponent implements ControlValueAccessor {
   @Input()
   disabled: boolean = false;
+  @Input()
+  type: string = 'text';
 
   controlValue: string = '';
-  type: string = 'text';
 
   constructor() { }
 
